@@ -3,14 +3,14 @@
 Add the following domains to the `/etc/hosts` file:
 
 ```shell
-127.0.0.1 magento.shop.ua www.magento.shop.ua mh-prod-magento.shop.ua pma-prod-magento.shop.ua
+127.0.0.1 magento.shopping.com www.magento.shopping.com mh-prod-magento.shopping.com pma-prod-magento.shopping.com
 ```
 
 Urls list:
-- [https://magento.shop.ua](https://magento.shop.ua) 
-- [https://www.magento.shop.ua](https://www.magento.shop.ua) 
-- [http://mh-prod-magento.shop.ua](http://mh-prod-magento.shop.ua) 
-- [http://pma-prod-magento.shop.ua](http://pma-prod-magento.shop.ua)
+- [https://magento.shopping.com](https://magento.shopping.com) 
+- [https://www.magento.shopping.com](https://www.magento.shopping.com) 
+- [http://mh-prod-magento.shopping.com](http://mh-prod-magento.shopping.com) 
+- [http://pma-prod-magento.shopping.com](http://pma-prod-magento.shopping.com)
 
 
 ## Local development - self-signed certificates ##
@@ -18,7 +18,7 @@ Urls list:
 Generate self-signed certificates before running this composition in the `$DOCKERIZER_SSL_CERTIFICATES_DIR`:
 
 ```shell
-mkcert -cert-file=magento.shop.ua-prod.pem -key-file=magento.shop.ua-prod-key.pem magento.shop.ua www.magento.shop.ua
+mkcert -cert-file=magento.shopping.com-prod.pem -key-file=magento.shopping.com-prod-key.pem magento.shopping.com www.magento.shopping.com
 ```
 
 Add these keys to the Traefik configuration file if needed.

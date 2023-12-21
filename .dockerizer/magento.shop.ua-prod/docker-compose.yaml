@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   php:
-    container_name: magento.shop.ua-prod
+    container_name: magento.shopping.com-prod
     image: 'defaultvalue/php:8.2-production'
     user: 'docker:docker'
     sysctls:
@@ -10,21 +10,21 @@ services:
     networks:
       default:
         aliases:
-          - magento.shop.ua
-          - www.magento.shop.ua
+          - magento.shopping.com
+          - www.magento.shopping.com
     labels:
       - traefik.enable=true
-      - 'traefik.http.routers.magento-shop-ua-http.rule=Host(`magento.shop.ua`,`www.magento.shop.ua`)'
-      - traefik.http.routers.magento-shop-ua-http.entrypoints=http
-      - traefik.http.routers.magento-shop-ua-http.service=magento-shop-ua-http
-      - traefik.http.services.magento-shop-ua-http.loadbalancer.server.port=80
-      - traefik.http.services.magento-shop-ua-http.loadbalancer.server.scheme=http
-      - 'traefik.http.routers.magento-shop-ua-https.rule=Host(`magento.shop.ua`,`www.magento.shop.ua`)'
-      - traefik.http.routers.magento-shop-ua-https.entrypoints=https
-      - traefik.http.routers.magento-shop-ua-https.tls=true
-      - traefik.http.routers.magento-shop-ua-https.service=magento-shop-ua-https
-      - traefik.http.services.magento-shop-ua-https.loadbalancer.server.port=443
-      - traefik.http.services.magento-shop-ua-https.loadbalancer.server.scheme=https
+      - 'traefik.http.routers.magento-shopping-com-http.rule=Host(`magento.shopping.com`,`www.magento.shopping.com`)'
+      - traefik.http.routers.magento-shopping-com-http.entrypoints=http
+      - traefik.http.routers.magento-shopping-com-http.service=magento-shopping-com-http
+      - traefik.http.services.magento-shopping-com-http.loadbalancer.server.port=80
+      - traefik.http.services.magento-shopping-com-http.loadbalancer.server.scheme=http
+      - 'traefik.http.routers.magento-shopping-com-https.rule=Host(`magento.shopping.com`,`www.magento.shopping.com`)'
+      - traefik.http.routers.magento-shopping-com-https.entrypoints=https
+      - traefik.http.routers.magento-shopping-com-https.tls=true
+      - traefik.http.routers.magento-shopping-com-https.service=magento-shopping-com-https
+      - traefik.http.services.magento-shopping-com-https.loadbalancer.server.port=443
+      - traefik.http.services.magento-shopping-com-https.loadbalancer.server.scheme=https
     environment:
       - COMPOSER_VERSION=2
     volumes:
